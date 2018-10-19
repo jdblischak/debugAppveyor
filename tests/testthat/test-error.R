@@ -27,3 +27,25 @@ test_that("wflow_rename works", {
   expect_true(dir.exists(new))
   # browser()
 })
+
+test_that("Can create directories", {
+  newfile <- workflowr:::absolute(tempfile("a/"))
+  lapply(newfile, function(x) {
+    dir.create(dirname(x), showWarnings = FALSE, recursive = TRUE)
+  })
+  expect_true(dir.exists(dirname(newfile)))
+
+  multinewfile <- workflowr:::absolute(c(tempfile("b/"),
+                                         tempfile("b/"),
+                                         tempfile("c/")))
+  lapply(multinewfile, function(x) {
+    dir.create(dirname(x), showWarnings = FALSE, recursive = TRUE)
+  })
+  expect_true(all(dir.exists(dirname(multinewfile))))
+
+  nestednewfile <- workflowr:::absolute(tempfile("a/b/c/"))
+  lapply(nestednewfile, function(x) {
+    dir.create(dirname(x), showWarnings = FALSE, recursive = TRUE)
+  })
+  expect_true(dir.exists(dirname(nestednewfile)))
+})
