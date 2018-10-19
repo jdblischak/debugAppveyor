@@ -40,15 +40,14 @@ test_that("Can create directory with relative path with lapply", {
   expect_true(all(dir.exists(d)))
 })
 
-
 test_that("Can create directories", {
-  newfile <- workflowr:::absolute(tempfile("a/"))
+  newfile <- workflowr:::relative(tempfile("a/"))
   lapply(newfile, function(x) {
     dir.create(dirname(x), showWarnings = FALSE, recursive = TRUE)
   })
   expect_true(dir.exists(dirname(newfile)))
 
-  multinewfile <- workflowr:::absolute(c(tempfile("b/"),
+  multinewfile <- workflowr:::relative(c(tempfile("b/"),
                                          tempfile("b/"),
                                          tempfile("c/")))
   lapply(multinewfile, function(x) {
@@ -56,7 +55,7 @@ test_that("Can create directories", {
   })
   expect_true(all(dir.exists(dirname(multinewfile))))
 
-  nestednewfile <- workflowr:::absolute(tempfile("a/b/c/"))
+  nestednewfile <- workflowr:::relative(tempfile("a/b/c/"))
   lapply(nestednewfile, function(x) {
     dir.create(dirname(x), showWarnings = FALSE, recursive = TRUE)
   })
