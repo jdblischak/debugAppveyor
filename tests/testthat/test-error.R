@@ -14,5 +14,17 @@ test_that("rename works", {
   file.rename(d1_rel, d2_rel)
   expect_true(dir.exists(d2_rel))
   expect_false(dir.exists(d1_rel))
+})
+
+test_that("wflow_rename works", {
+  d1 <- tempfile()
+  d2 <- tempfile()
+  dir.create(d1)
+  file.create(file.path(d1, "file.txt"))
+  d1_rel <- fs::path_rel(d1)
+  d2_rel <- fs::path_rel(d2)
+  workflowr::wflow_rename(d1_rel, d2_rel, project = dirname(d1_rel))
+  expect_true(dir.exists(d2_rel))
+  expect_false(dir.exists(d1_rel))
   # browser()
 })

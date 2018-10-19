@@ -8,9 +8,12 @@ Description: Throws an error for debugging R package on AppVeyor.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: 
-    fs
-Suggests: 
+Imports:
+    fs,
+    workflowr
+Suggests:
     testthat,
     devtools,
     roxygen2
+Remotes:
+    jdblischak/workflowr@dev
