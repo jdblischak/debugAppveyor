@@ -3,8 +3,8 @@ Type: Package
 Title: Throws an error for debugging R package on AppVeyor
 Version: 0.1.0
 Author: John Blischak
-Maintainer: John Blischak
-Description: Throws an error for debugging R package on AppVeyor
+Maintainer: John Blischak <email@email.domain>
+Description: Throws an error for debugging R package on AppVeyor.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
