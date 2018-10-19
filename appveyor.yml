@@ -18,7 +18,6 @@ environment:
   # Don't install pkgs from source since any packages with compiled code could
   # take a long time to build
   PKGTYPE: win.binary
-  USE_RTOOLS: false
 
 build_script:
   - travis-tool.sh install_deps
