@@ -12,4 +12,4 @@ $env:R_LIBS_USER = "C:\Rlibrary"
 
 Rscript.exe -e ".libPaths()"
 
-.\travis-tool.sh.com run_tests
+.\travis-tool.sh.cmd run_tests
