@@ -1,1 +1,1 @@
-.libPaths("C:\RLibrary")
+.libPaths("C:\\RLibrary")
