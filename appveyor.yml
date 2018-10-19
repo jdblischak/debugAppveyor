@@ -15,8 +15,8 @@ cache:
 
 # Adapt as necessary starting from here
 environment:
-  # Don't install pkgs from source since this would require a lengthy RTools
-  # installation to build any source packages with compiled code
+  # Don't install pkgs from source since any packages with compiled code could
+  # take a long time to build
   PKGTYPE: win.binary
 
 build_script:
