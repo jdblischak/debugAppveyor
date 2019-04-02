@@ -12,6 +12,10 @@ install:
 
 cache:
   - C:\RLibrary
+  - C:\Program Files (x86)\Pandoc\
+
+before_test:
+  - ps: choco install pandoc --version 1.19.1 --allow-downgrade
 
 # Adapt as necessary starting from here
 environment:
