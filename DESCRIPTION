@@ -16,5 +16,3 @@ Suggests:
     testthat,
     devtools,
     roxygen2
-Remotes:
-    jdblischak/workflowr@dev
