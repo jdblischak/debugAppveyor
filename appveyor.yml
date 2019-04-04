@@ -8,12 +8,12 @@ init:
         Import-Module '..\appveyor-tool.ps1'
 
 install:
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+# Uncomment line below to start debugger at the beginning of the build
+#  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - ps: Bootstrap
 
 cache:
   - C:\RLibrary -> DESCRIPTION
-  - C:\Program Files (x86)\Pandoc\
 
 before_test:
   - ps: choco install pandoc --version 1.19.1 --allow-downgrade
